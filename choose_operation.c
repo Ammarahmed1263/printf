@@ -13,7 +13,7 @@ int (*chs_op(char s))(va_list v_arg)
 		{"c", print_c},
 		{"s", print_s},
 		{"d", print_d},
-		{"i", print_i},
+		{"i", print_d},
 		{NULL, NULL}
 	};
 

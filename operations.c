@@ -30,15 +30,16 @@ int print_s(va_list s)
 	int i, sum = 0;
 	char *str;
 
-	i = 0;
 	str = va_arg(s, char*);
+	
 	if (str == NULL)
 		str = "(null)";
+
+	i = 0;
 	while (str[i] != '\0')
 	{
-		_putchar(str[i]);
+		sum += _putchar(str[i]);
 		i++;
-		sum++;
 	}
 	return (sum);
 }
@@ -52,27 +53,28 @@ int print_s(va_list s)
 
 int print_d(va_list d)
 {
-	int p;
+	int p, temp, multiple = 1, sum = 0;
 
 	p = va_arg(d, int);
+	
+	if (p < 0)
+	{
+		p *= -1;
+		_putchar('-');
+	}
 
-	return (_putchar(p));
-}
+	temp = p;
+	while (temp > 9)
+	{
+		temp /= 10;
+		multiple *= 10;
+	}
 
-/**
- * print_i - prints character
- * @i: variadic arguments
- *
- * Description: this function prints input digit
- * Return: 1 always
- */
-
-int print_i(va_list i)
-{
-	int p;
-
-	p = va_arg(i, int);
-
-	return (_putchar(p));
+	while (multiple > 0)
+	{
+		sum += _putchar(((p / multiple) % 10) + '0');
+		multiple /= 10;
+	}
+	return (sum);
 }
 
