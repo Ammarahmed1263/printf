@@ -22,7 +22,7 @@ int print_c(va_list c)
  * @s: variadic arguments
  *
  * Description: this function prints input string
- * Return: 1 always
+ * Return: number of printed characters
  */
 
 int print_s(va_list s)
@@ -48,7 +48,7 @@ int print_s(va_list s)
  * @d: variadic arguments
  *
  * Description: this function prints input integer
- * Return: 1 always
+ * Return: number of printed characters
  */
 
 int print_d(va_list d)
@@ -78,4 +78,35 @@ int print_d(va_list d)
 	}
 	return (sum);
 }
+/**
+ * print_bin - prints binary conversion
+ * @n: variadic arguments
+ *
+ * Description: converts int to binary
+ *
+ * Return: 1 on sucess and -1 on fail
+ */
 
+int print_bin(va_list n)
+{
+        int p, m, i, sum = 0, arr[32];
+
+        p = va_arg(n, int);
+
+	if (p < 0)
+		return (-1);
+
+	m  = 0;
+        while (p > 0)
+	{
+		arr[m] = p % 2;
+		p /= 2;
+		m++;
+	}
+
+	for (i = m - 1; i >= 0; i--)
+		sum += _putchar(arr[i] + '0');
+
+	return (sum);
+
+}
