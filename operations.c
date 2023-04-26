@@ -89,12 +89,15 @@ int print_d(va_list d)
 
 int print_bin(va_list n)
 {
-        int p, m, i, arr[32];
+        long int p, m, i, sum = 0, arr[64];
 
         p = va_arg(n, int);
 
 	if (p < 0)
 		return (-1);
+
+	if (p == 0)
+		return(sum += _putchar('0'));
 
 	m  = 0;
         while (p > 0)
@@ -105,8 +108,8 @@ int print_bin(va_list n)
 	}
 
 	for (i = m - 1; i >= 0; i--)
-		_putchar(arr[i] + '0');
+		sum += _putchar(arr[i] + '0');
 
-	return (m);
+	return (sum);
 
 }
