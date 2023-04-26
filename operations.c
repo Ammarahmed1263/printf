@@ -60,7 +60,7 @@ int print_d(va_list d)
 	if (p < 0)
 	{
 		p *= -1;
-		_putchar('-');
+		sum += _putchar('-');
 	}
 
 	temp = p;
