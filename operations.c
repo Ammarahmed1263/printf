@@ -53,7 +53,8 @@ int print_s(va_list s)
 
 int print_d(va_list d)
 {
-	int p, temp, multiple = 1, sum = 0;
+	int p;
+	unsigned int temp, multiple = 1, sum = 0;
 
 	p = va_arg(d, int);
 	
