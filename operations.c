@@ -89,10 +89,10 @@ int print_d(va_list d)
 
 int print_bin(va_list n)
 {
-        long int p, m, i, j, sum = 0, flag = 0;
+        long p, m, i, j, sum = 0, flag = 0;
 	int arr[64] = {0};
 
-        p = va_arg(n, int);
+        p = va_arg(n, long);
 
 	if (p < 0)
 	{
