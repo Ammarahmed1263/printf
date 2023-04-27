@@ -102,7 +102,10 @@ int print_bin(va_list n)
 	}
 
 	if (p == 0)
+	{
+		sum += _putchar('0');
 		return(sum += _putchar('0'));
+	}
 
 	m  = 0;
         while (p > 0)
