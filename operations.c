@@ -117,7 +117,7 @@ int print_bin(va_list n)
 
 	if (flag)
 	{
-		for (j = 32; j >= 0; j--)
+		for (j = 31; j >= 0; j--)
 		{
 			if (arr[j] == 0)
 				arr[j] = 1;
