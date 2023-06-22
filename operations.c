@@ -1,5 +1,5 @@
 #include "main.h"
-
+#include <limits.h>
 /**
  * print_c - prints character
  * @c: variadic arguments
@@ -96,14 +96,18 @@ int print_bin(va_list n)
 
 	if (p < 0)
 	{
-		p *= -1;
-		p--;
 		flag = 1;
 	}
 
 	if (p == 0)
 	{
 		return(sum += _putchar('0'));
+	}
+	
+	if (p > UINT_MAX)
+	{
+		p %= UINT_MAX;
+		p--;
 	}
 
 	m  = 0;
