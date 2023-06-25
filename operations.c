@@ -31,7 +31,7 @@ int print_s(va_list s)
 	char *str;
 
 	str = va_arg(s, char*);
-	
+
 	if (str == NULL)
 		str = "(null)";
 
@@ -57,7 +57,7 @@ int print_d(va_list d)
 	unsigned int temp, multiple = 1, sum = 0;
 
 	p = va_arg(d, int);
-	
+
 	if (p < 0)
 	{
 		p *= -1;
@@ -77,64 +77,4 @@ int print_d(va_list d)
 		multiple /= 10;
 	}
 	return (sum);
-}
-/**
- * print_bin - prints binary conversion
- * @n: variadic arguments
- *
- * Description: converts int to binary
- *
- * Return: 1 on sucess and -1 on fail
- */
-
-int print_bin(va_list n)
-{
-        long p, m, i, j, sum = 0, flag = 0;
-	int arr[64] = {0};
-
-        p = va_arg(n, long);
-
-	if (p < 0)
-	{
-		flag = 1;
-	}
-
-	if (p == 0)
-	{
-		return(sum += _putchar('0'));
-	}
-	
-	if (p > UINT_MAX)
-	{
-		p %= UINT_MAX;
-		p--;
-	}
-
-	m  = 0;
-        while (p > 0)
-	{
-		arr[m] = p % 2;
-		p /= 2;
-		m++;
-	}
-
-	if (flag)
-	{
-		for (j = 31; j >= 0; j--)
-		{
-			if (arr[j] == 0)
-				arr[j] = 1;
-			else
-				arr[j] = 0;
-
-			sum += _putchar(arr[j] + '0');
-		}
-	}
-	else
-	{
-		for (i = m - 1; i >= 0; i--)
-			sum += _putchar(arr[i] + '0');
-	}
-	return (sum);
-
 }

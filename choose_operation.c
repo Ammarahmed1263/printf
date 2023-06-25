@@ -15,6 +15,10 @@ int (*chs_op(char s))(va_list v_arg)
 		{"d", print_d},
 		{"i", print_d},
 		{"b", print_bin},
+		{"o", print_oct},
+		{"x", print_hex},
+		{"X", print_hex_u},
+		{"S", print_str},
 		{NULL, NULL}
 	};
 

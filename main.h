@@ -22,6 +22,11 @@ int _printf(const char *format, ...);
 int print_c(va_list c);
 int print_s(va_list s);
 int print_d(va_list d);
+int converter(va_list dec, int base, int lower);
 int print_bin(va_list n);
+int print_oct(va_list n);
+int print_hex(va_list n);
+int print_hex_u(va_list n);
+int print_str(va_list st);
 int (*chs_op(char s))(va_list v_arg);
 #endif
