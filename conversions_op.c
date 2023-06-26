@@ -16,7 +16,7 @@
 int converter(long dec, int base, int lower)
 {
 	long rem, sum = 0;
-	char digits[64];
+	char digits[64] = {0};
 	char upper[6] = {'A', 'B', 'C', 'D', 'E', 'F'};
 	int i = 0;
 
@@ -38,7 +38,7 @@ int converter(long dec, int base, int lower)
 		i++;
 	}
 
-	i--;
+	i = (i == 0) ? i : (i - 1);
 	while (i >= 0)
 		sum += _putchar(digits[i--] + '0');
 
@@ -56,7 +56,7 @@ int converter(long dec, int base, int lower)
 
 int print_bin(va_list n)
 {
-	int num;
+	long num;
 
 	num = va_arg(n, long);
 
@@ -73,7 +73,7 @@ int print_bin(va_list n)
 
 int print_oct(va_list n)
 {
-	int num;
+	long num;
 
 	num = va_arg(n, long);
 
@@ -91,7 +91,7 @@ int print_oct(va_list n)
 
 int print_hex(va_list n)
 {
-	int num;
+	long num;
 
 	num = va_arg(n, long);
 
@@ -109,7 +109,7 @@ int print_hex(va_list n)
 
 int print_hex_u(va_list n)
 {
-	int num;
+	long num;
 
 	num = va_arg(n, long);
 
