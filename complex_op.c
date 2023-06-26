@@ -11,8 +11,9 @@
 
 int print_str(va_list st)
 {
-	int i, sum = 0, ascii;
+	int i, sum = 0, ascii, rem = 0;
 	char *str;
+
 
 	str = va_arg(st, char*);
 
@@ -27,14 +28,26 @@ int print_str(va_list st)
 
 		if ((ascii > 0 && ascii < 32) || ascii >= 127)
 		{
+			int j = 1;
+			char hex[2] = {'0', '0'};
+
 			sum += _putchar('\\');
 			sum += _putchar('x');
 
-			sum += converter((long)ascii, 16, 0);
+			while (ascii > 0)
+			{
+				rem = ascii % 16;
+				hex[j--] = rem > 9 ? rem + 55 : rem + 48;
+				ascii /= 16;
+			}
+			
+			sum += _putchar(hex[0]);
+			sum += _putchar(hex[1]);
 		}
 		else
 		{
 			sum += _putchar(str[i]);
+
 		}
 	}
 
