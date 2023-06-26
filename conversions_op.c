@@ -1,4 +1,5 @@
 #include "main.h"
+#include <limits.h>
 
 /**
  * converter - convert number to given base
@@ -19,6 +20,12 @@ int converter(long dec, int base, int lower)
 	char digits[64] = {0};
 	char upper[6] = {'A', 'B', 'C', 'D', 'E', 'F'};
 	int i = 0;
+
+	if (dec > UINT_MAX)
+	{
+		dec %= UINT_MAX;
+		dec--;
+	}
 
 	while (dec > 0)
 	{
