@@ -13,18 +13,16 @@
  * Return: sum of charactters printed
  */
 
-int converter(va_list dec, int base, int lower)
+int converter(long dec, int base, int lower)
 {
-	long num, rem, sum = 0;
+	long rem, sum = 0;
 	char digits[64];
 	char upper[6] = {'A', 'B', 'C', 'D', 'E', 'F'};
 	int i = 0;
 
-	num = va_arg(dec, long);
-
-	while (num > 0)
+	while (dec > 0)
 	{
-		digits[i] = num % base;
+		digits[i] = dec % base;
 
 		if (digits[i] > 9 && base == 16)
 		{
@@ -36,7 +34,7 @@ int converter(va_list dec, int base, int lower)
 				digits[i] = upper[rem] + 32 - '0';
 		}
 
-		num /= base;
+		dec /= base;
 		i++;
 	}
 
@@ -58,7 +56,11 @@ int converter(va_list dec, int base, int lower)
 
 int print_bin(va_list n)
 {
-	return (converter(n, 2, 0));
+	int num;
+
+	num = va_arg(n, long);
+
+	return (converter(num, 2, 0));
 }
 /**
  * print_oct - prints octal conversion
@@ -71,7 +73,11 @@ int print_bin(va_list n)
 
 int print_oct(va_list n)
 {
-	return (converter(n, 8, 0));
+	int num;
+
+	num = va_arg(n, long);
+
+	return (converter(num, 8, 0));
 }
 
 /**
@@ -85,7 +91,11 @@ int print_oct(va_list n)
 
 int print_hex(va_list n)
 {
-	return (converter(n, 16, 1));
+	int num;
+
+	num = va_arg(n, long);
+
+	return (converter(num, 16, 1));
 }
 
 /**
@@ -99,5 +109,9 @@ int print_hex(va_list n)
 
 int print_hex_u(va_list n)
 {
-	return (converter(n, 16, 0));
+	int num;
+
+	num = va_arg(n, long);
+
+	return (converter(num, 16, 0));
 }
