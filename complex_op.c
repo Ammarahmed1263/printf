@@ -1,5 +1,13 @@
 #include "main.h"
 
+int countStr(char* str){
+        int counter = 0;
+        
+	while(str[counter++] != '\0');
+        
+	return (counter);
+}
+
 /**
  * print_str - prints string
  * @string: variadic arguments
@@ -52,4 +60,22 @@ int print_str(va_list st)
 	}
 
 	return (sum);
+}
+
+int print_r(va_list s){
+        int i, strSize = 0;
+        char *str;
+
+        str = va_arg(s, char*);
+        
+	if(str == NULL){
+                str = "(null)";
+        }
+        
+	strSize = countStr(str) - 1;
+        for(i = strSize; i >= 0; i--){
+                _putchar(str[i]);
+        }
+
+        return (strSize);
 }
