@@ -1,6 +1,5 @@
 #include "main.h"
-
 int main(){
-    _printf("%u\n", 0);
+    _printf("%r", "ahom");
     return 0;
 }

@@ -101,3 +101,23 @@ int print_u(va_list u)
 	}
 	return (sum);
 }
+
+int countStr(char* str){
+	int counter = 0;
+	while(str[counter++] != '\0');
+	return counter;
+}
+int print_r(va_list s){
+	int i, sum = 0;
+	char *str;
+	str = va_arg(s, char*);
+	if(str == NULL){
+		str = "(null)";
+	}
+	int strSize = countStr(str)-1;
+	for(int i = strSize;i>=0;i--){
+		_putchar(str[i]);
+	}
+
+	return strSize;
+}
