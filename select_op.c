@@ -19,6 +19,7 @@ int (*chs_op(char s))(va_list v_arg)
 		{"x", print_hex},
 		{"X", print_hex_u},
 		{"S", print_str},
+		{"u", print_U},
 		{NULL, NULL}
 	};
 

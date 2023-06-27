@@ -78,3 +78,26 @@ int print_d(va_list d)
 	}
 	return (sum);
 }
+
+
+int print_U(va_list u)
+{
+	unsigned int p;
+	unsigned int temp, multiple = 1, sum = 0;
+
+	p = va_arg(u, unsigned int);
+
+	temp = p;
+	while (temp > 9)
+	{
+		temp /= 10;
+		multiple *= 10;
+	}
+
+	while (multiple > 0)
+	{
+		sum += _putchar(((p / multiple) % 10) + '0');
+		multiple /= 10;
+	}
+	return (sum);
+}
