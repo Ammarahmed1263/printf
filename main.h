@@ -27,7 +27,7 @@ int print_bin(va_list n);
 int print_oct(va_list n);
 int print_hex(va_list n);
 int print_hex_u(va_list n);
+int print_u(va_list u);
 int print_str(va_list st);
 int (*chs_op(char s))(va_list v_arg);
-int print_U(va_list u);
 #endif

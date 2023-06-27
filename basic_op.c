@@ -80,7 +80,7 @@ int print_d(va_list d)
 }
 
 
-int print_U(va_list u)
+int print_u(va_list u)
 {
 	unsigned int p;
 	unsigned int temp, multiple = 1, sum = 0;
