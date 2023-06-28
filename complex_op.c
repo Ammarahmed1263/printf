@@ -1,6 +1,7 @@
 #include "main.h"
 
-int countStr(char* str){
+int countStr(char* str)
+{
         int counter = 0;
         
 	while(str[counter++] != '\0');
@@ -8,6 +9,22 @@ int countStr(char* str){
 	return (counter);
 }
 
+
+int print_p(va_list p)
+{
+	intmax_t num;
+	int sum = 0;
+
+	void *ptr = va_arg(p, void *);
+
+	num = (intmax_t)ptr;
+
+	_putchar('0');
+	_putchar('x');
+	sum += converter(num , 16 , 1);
+
+	return (sum + 2);
+}
 /**
  * print_str - prints string
  * @string: variadic arguments
@@ -62,7 +79,8 @@ int print_str(va_list st)
 	return (sum);
 }
 
-int print_r(va_list s){
+int print_r(va_list s)
+{
         int i, strSize = 0;
         char *str;
 

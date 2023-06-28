@@ -1,5 +1,4 @@
 #include "main.h"
-#include <limits.h>
 /**
  * print_c - prints character
  * @c: variadic arguments

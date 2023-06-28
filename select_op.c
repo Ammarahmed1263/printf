@@ -20,6 +20,7 @@ int (*chs_op(char s))(va_list v_arg)
 		{"X", print_hex_u},
 		{"S", print_str},
 		{"u", print_u},
+		{"p", print_p},
 		{"r", print_r},
 		{NULL, NULL}
 	};

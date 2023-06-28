@@ -1,5 +1,4 @@
 #include "main.h"
-#include <limits.h>
 
 /**
  * converter - convert number to given base
@@ -17,7 +16,7 @@
 int converter(long dec, int base, int lower)
 {
 	long rem, sum = 0;
-	char digits[64] = {0};
+	char digits[64] = {'0'};
 	char upper[6] = {'A', 'B', 'C', 'D', 'E', 'F'};
 	int i = 0;
 
@@ -36,9 +35,9 @@ int converter(long dec, int base, int lower)
 			rem = digits[i] % 10;
 
 			if (lower == 0)
-				digits[i] = upper[rem] - '0';
+				digits[i] = upper[rem];
 			else
-				digits[i] = upper[rem] + 32 - '0';
+				digits[i] = upper[rem] + 32;
 		}
 
 		dec /= base;
@@ -47,7 +46,7 @@ int converter(long dec, int base, int lower)
 
 	i = (i == 0) ? i : (i - 1);
 	while (i >= 0)
-		sum += _putchar(digits[i--] + '0');
+		sum += _putchar(digits[i--]);
 
 	return (sum);
 }
