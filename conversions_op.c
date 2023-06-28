@@ -28,7 +28,7 @@ int converter(long dec, int base, int lower)
 
 	while (dec > 0)
 	{
-		digits[i] = dec % base;
+		digits[i] = (dec % base) + '0';
 
 		if (digits[i] > 9 && base == 16)
 		{
