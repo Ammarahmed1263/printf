@@ -28,16 +28,16 @@ int converter(long dec, int base, int lower)
 
 	while (dec > 0)
 	{
-		digits[i] = (dec % base) + '0';
+		digits[i] = dec % base;
 
 		if (digits[i] > 9 && base == 16)
 		{
 			rem = digits[i] % 10;
 
 			if (lower == 0)
-				digits[i] = upper[rem];
+				digits[i] = upper[rem] - '0';
 			else
-				digits[i] = upper[rem] + 32;
+				digits[i] = upper[rem] + 32 - '0';
 		}
 
 		dec /= base;
@@ -46,7 +46,7 @@ int converter(long dec, int base, int lower)
 
 	i = (i == 0) ? i : (i - 1);
 	while (i >= 0)
-		sum += _putchar(digits[i--]);
+		sum += _putchar(digits[i--] + '0');
 
 	return (sum);
 }
