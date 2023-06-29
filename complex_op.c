@@ -22,7 +22,7 @@ int print_p(va_list p)
 
     _putchar('0');
     _putchar('x');
-    sum += converter(num, sizeof(uintptr_t) * 2, 1);
+    sum += converter(num, 16, 1);
 
     return (sum + 2);
 }
