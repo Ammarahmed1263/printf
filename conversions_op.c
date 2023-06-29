@@ -18,12 +18,7 @@ int converter(long dec, int base, int lower)
 	long rem;
 	char digits[64] = {'0'};
 	char upper[6] = {'A', 'B', 'C', 'D', 'E', 'F'};
-	int i = 0, sum = 0, flag = 0;
-
-	if (dec > INT_MAX)
-	{
-		flag = 1;
-	}
+	int i = 0, sum = 0;
 
 	while (dec > 0)
 	{
@@ -47,15 +42,7 @@ int converter(long dec, int base, int lower)
 
 	while (i >= 0)
 	{
-		if (flag == 0)
-		{
 			sum += _putchar(digits[i--] + '0');
-		}
-		else
-		{
-			sum += _putchar((digits[i--] & 1) + '0');
-
-		}
 	}
 	return (sum);
 
