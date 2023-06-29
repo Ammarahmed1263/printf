@@ -15,15 +15,14 @@
 
 int converter(long dec, int base, int lower)
 {
-	long rem, sum = 0;
+	long rem;
 	char digits[64] = {'0'};
 	char upper[6] = {'A', 'B', 'C', 'D', 'E', 'F'};
-	int i = 0;
+	int i = 0, sum = 0, flag = 0;
 
-	if (dec > UINT_MAX)
+	if (dec > INT_MAX)
 	{
-		dec %= UINT_MAX;
-		dec--;
+		flag = 1;
 	}
 
 	while (dec > 0)
@@ -45,12 +44,22 @@ int converter(long dec, int base, int lower)
 	}
 
 	i = (i == 0) ? i : (i - 1);
+
 	while (i >= 0)
-		sum += _putchar(digits[i--] + '0');
+	{
+		if (flag == 0)
+		{
+			sum += _putchar(digits[i--] + '0');
+		}
+		else
+		{
+			sum += _putchar((digits[i--] & 1) + '0');
 
+		}
+	}
 	return (sum);
-}
 
+}
 /**
  * print_bin - prints binary conversion
  * @n: variadic arguments
