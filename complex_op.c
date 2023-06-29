@@ -9,21 +9,22 @@ int countStr(char* str)
 	return (counter);
 }
 
+#include <inttypes.h>
 
 int print_p(va_list p)
 {
-	intmax_t num;
-	int sum = 0;
+    uintptr_t num;
+    int sum = 0;
 
-	void *ptr = va_arg(p, void *);
+    void *ptr = va_arg(p, void *);
 
-	num = (intmax_t)ptr;
+    num = (uintptr_t)ptr;
 
-	_putchar('0');
-	_putchar('x');
-	sum += converter(num , 16 , 1);
+    _putchar('0');
+    _putchar('x');
+    sum += converter(num, sizeof(uintptr_t) * 2, 1);
 
-	return (sum + 2);
+    return (sum + 2);
 }
 /**
  * print_str - prints string
@@ -78,22 +79,23 @@ int print_str(va_list st)
 
 	return (sum);
 }
+#include <stddef.h>
 
 int print_r(va_list s)
 {
-        int i, strSize = 0;
-        char *str;
+    size_t i, strSize = 0;
+    char *str;
 
-        str = va_arg(s, char*);
-        
-	if(str == NULL){
-                str = "(null)";
-        }
-        
-	strSize = countStr(str) - 1;
-        for(i = strSize; i >= 0; i--){
-                _putchar(str[i]);
-        }
+    str = va_arg(s, char*);
 
-        return (strSize);
+    if(str == NULL){
+        str = "(null)";
+    }
+
+    strSize = strlen(str);
+    for(i = strSize; i > 0; i--){
+        _putchar(str[i - 1]);
+    }
+
+    return (strSize);
 }
