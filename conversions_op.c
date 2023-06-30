@@ -17,7 +17,7 @@ int converter(long dec, int base, int lower)
 {
 	char digits[64] = {'0'};
 	unsigned int sum = 0, u_dec;
-	int i, j;
+	int i;
 
 	if (dec == 0)
 		return (_putchar('0'));
@@ -35,7 +35,8 @@ int converter(long dec, int base, int lower)
 			dec /= base;
 		}
 
-	} else
+	}
+	else
 	{
 		u_dec = dec;
 		for (i = 0; u_dec > 0; i++)
@@ -45,12 +46,10 @@ int converter(long dec, int base, int lower)
 			u_dec /= base;
 		}
 	}
-	i--;
-	while (i >= 0)
-	{
+	
+	for (i = i - 1; i >= 0; i++)
 		sum += _putchar(digits[i] + '0');
-		i++;
-	}
+	
 	return (sum);
 
 }
