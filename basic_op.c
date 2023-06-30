@@ -17,7 +17,7 @@ int print_c(va_list c)
 }
 
 /**
- * print_s - prints character
+ * print_s - prints string of characters
  * @s: variadic arguments
  *
  * Description: this function prints input string
@@ -43,7 +43,7 @@ int print_s(va_list s)
 	return (sum);
 }
 /**
- * print_d - prints character
+ * print_d - prints numbers in range of interger
  * @d: variadic arguments
  *
  * Description: this function prints input integer
@@ -79,6 +79,14 @@ int print_d(va_list d)
 }
 
 
+/**
+ * print_u - prints unsigned integer
+ * @u: variadic arguments
+ *
+ * Description: this function prints input integer
+ * Return: number of printed characters
+ */
+
 int print_u(va_list u)
 {
 	unsigned int p;
@@ -87,6 +95,7 @@ int print_u(va_list u)
 	p = va_arg(u, unsigned int);
 
 	temp = p;
+
 	while (temp > 9)
 	{
 		temp /= 10;
@@ -98,5 +107,6 @@ int print_u(va_list u)
 		sum += _putchar(((p / multiple) % 10) + '0');
 		multiple /= 10;
 	}
+
 	return (sum);
 }

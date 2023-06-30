@@ -15,35 +15,26 @@
 
 int converter(long dec, int base, int lower)
 {
-	long rem;
 	char digits[64] = {'0'};
-	char upper[6] = {'A', 'B', 'C', 'D', 'E', 'F'};
 	unsigned int sum = 0, u_dec;
-	int i = 0;
+	int i;
 
 	if (dec == 0)
-	{
 		return (_putchar('0'));
+
+	if (dec > UINT_MAX)
+	{
+		dec %= UINT_MAX;
+		dec--;
 	}
 
 	if (dec > 0)
-	{		
-		while (dec > 0)
+	{
+		for (i = 0; dec > 0; i++)
 		{
 			digits[i] = dec % base;
-
-			if (digits[i] > 9 && base == 16)
-			{
-				rem = digits[i] % 10;
-
-				if (lower == 0)
-					digits[i] = upper[rem] - '0';
-				else
-					digits[i] = upper[rem] + 32 - '0';
-			}
-
+			alpha_hex(digits, i, base, lower);
 			dec /= base;
-			i++;
 		}
 
 	}
@@ -51,31 +42,17 @@ int converter(long dec, int base, int lower)
 	{
 		u_dec = dec;
 
-		while (u_dec > 0)
+		for (i = 0; u_dec > 0; i++)
 		{
 			digits[i] = u_dec % base;
-
-			if (digits[i] > 9 && base == 16)
-			{
-				rem = digits[i] % 10;
-
-				if (lower == 0)
-					digits[i] = upper[rem] - '0';
-				else
-					digits[i] = upper[rem] + 32 - '0';
-			}
-
+			alpha_hex(digits, i, base, lower);
 			u_dec /= base;
-			i++;
 		}
-
 	}
-	
-	i--;
 
-	while (i >= 0)
+	for (i = i - 1; i >= 0; i--)
 	{
-			sum += _putchar(digits[i--] + '0');
+			sum += _putchar(digits[i] + '0');
 	}
 	return (sum);
 
