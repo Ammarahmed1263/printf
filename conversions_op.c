@@ -18,27 +18,60 @@ int converter(long dec, int base, int lower)
 	long rem;
 	char digits[64] = {'0'};
 	char upper[6] = {'A', 'B', 'C', 'D', 'E', 'F'};
-	int i = 0, sum = 0;
+	unsigned int sum = 0, u_dec;
+	int i = 0;
 
-	while (dec > 0)
+	if (dec == 0)
 	{
-		digits[i] = dec % base;
-
-		if (digits[i] > 9 && base == 16)
-		{
-			rem = digits[i] % 10;
-
-			if (lower == 0)
-				digits[i] = upper[rem] - '0';
-			else
-				digits[i] = upper[rem] + 32 - '0';
-		}
-
-		dec /= base;
-		i++;
+		return (_putchar('0'));
 	}
 
-	i = (i == 0) ? i : (i - 1);
+	if (dec > 0)
+	{		
+		while (dec > 0)
+		{
+			digits[i] = dec % base;
+
+			if (digits[i] > 9 && base == 16)
+			{
+				rem = digits[i] % 10;
+
+				if (lower == 0)
+					digits[i] = upper[rem] - '0';
+				else
+					digits[i] = upper[rem] + 32 - '0';
+			}
+
+			dec /= base;
+			i++;
+		}
+
+	}
+	else
+	{
+		u_dec = dec;
+
+		while (u_dec > 0)
+		{
+			digits[i] = u_dec % base;
+
+			if (digits[i] > 9 && base == 16)
+			{
+				rem = digits[i] % 10;
+
+				if (lower == 0)
+					digits[i] = upper[rem] - '0';
+				else
+					digits[i] = upper[rem] + 32 - '0';
+			}
+
+			u_dec /= base;
+			i++;
+		}
+
+	}
+	
+	i--;
 
 	while (i >= 0)
 	{
