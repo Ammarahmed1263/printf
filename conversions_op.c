@@ -21,6 +21,7 @@ int converter(long dec, int base, int lower)
 
 	if (dec == 0)
 		return (_putchar('0'));
+	
 	if (dec > UINT_MAX)
 	{
 		dec %= UINT_MAX;
@@ -47,7 +48,7 @@ int converter(long dec, int base, int lower)
 		}
 	}
 
-	for (i = i - 1; i >= 0; i++)
+	for (i = i - 1; i >= 0; i--)
 		sum += _putchar(digits[i] + '0');
 
 	return (sum);
