@@ -22,11 +22,6 @@ int converter(long dec, int base, int lower)
 	if (dec == 0)
 		return (_putchar('0'));
 	
-	if (dec > UINT_MAX)
-	{
-		dec %= UINT_MAX;
-		dec--;
-	}
 	if (dec > 0)
 	{
 		for (i = 0; dec > 0; i++)
@@ -69,6 +64,12 @@ int print_bin(va_list n)
 
 	num = va_arg(n, long);
 
+	if (num > UINT_MAX)
+	{
+		num %= UINT_MAX;
+		num--;
+	}
+
 	return (converter(num, 2, 0));
 }
 /**
@@ -86,6 +87,12 @@ int print_oct(va_list n)
 
 	num = va_arg(n, long);
 
+	if (num > UINT_MAX)
+	{
+		num %= UINT_MAX;
+		num--;
+	}
+	
 	return (converter(num, 8, 0));
 }
 
@@ -104,6 +111,12 @@ int print_hex(va_list n)
 
 	num = va_arg(n, long);
 
+	if (num > UINT_MAX)
+	{
+		num %= UINT_MAX;
+		num--;
+	}
+	
 	return (converter(num, 16, 1));
 }
 
@@ -122,5 +135,11 @@ int print_hex_u(va_list n)
 
 	num = va_arg(n, long);
 
+	if (num > UINT_MAX)
+	{
+		num %= UINT_MAX;
+		num--;
+	}
+	
 	return (converter(num, 16, 0));
 }
