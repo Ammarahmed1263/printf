@@ -19,9 +19,8 @@ int print_p(va_list p)
 
 	if (ptr == NULL)
 	{
-		i = 0;
-		while (nl[i] != '\0')
-			sum += _putchar(nl[i++]);
+		for (i = 0; nl[i] != '\0'; i++)
+			_putchar(nl[i]);
 
 		return (sum);
 	}

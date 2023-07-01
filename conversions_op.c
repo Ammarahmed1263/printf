@@ -13,7 +13,7 @@
  * Return: sum of charactters printed
  */
 
-int converter(long dec, int base, int lower)
+int converter(unsigned long dec, int base, int lower)
 {
 	char digits[64] = {'0'};
 	unsigned int sum = 0, u_dec;

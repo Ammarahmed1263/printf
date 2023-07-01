@@ -25,7 +25,7 @@ int _printf(const char *format, ...);
 int print_c(va_list c);
 int print_s(va_list s);
 int print_d(va_list d);
-int converter(long dec, int base, int lower);
+int converter(unsigned long dec, int base, int lower);
 void alpha_hex(char *arr, int x, int base, int lower);
 int print_bin(va_list n);
 int print_oct(va_list n);
