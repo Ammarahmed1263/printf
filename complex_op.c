@@ -13,7 +13,7 @@ int print_p(va_list p)
 {
 	uintptr_t num;
 	int sum = 0, i;
-	char nl[] = "(null)";
+	char nl[] = "(nil)";
 
 	void *ptr = va_arg(p, void *);
 
