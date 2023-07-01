@@ -22,7 +22,7 @@ int print_p(va_list p)
 		for (i = 0; nl[i] != '\0'; i++)
 			_putchar(nl[i]);
 
-		return (sum);
+		return (i);
 	}
 
 	num = (uintptr_t)ptr;
