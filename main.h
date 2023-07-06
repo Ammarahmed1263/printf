@@ -8,6 +8,7 @@
 #include <stdint.h>
 #include <limits.h>
 #include <stddef.h>
+#include <ctype.h>
 
 /**
  * struct operations - stores char with its corrosponding function
@@ -35,5 +36,6 @@ int print_u(va_list u);
 int print_str(va_list st);
 int print_p(va_list p);
 int print_r(va_list s);
+int rot13(va_list s);
 int (*chs_op(char s))(va_list v_arg);
 #endif

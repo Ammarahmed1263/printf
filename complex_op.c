@@ -116,3 +116,35 @@ int print_r(va_list s)
 
 	return (strSize);
 }
+
+/**
+ * rot13 - prints string
+ * @s: variadic arguments
+ *
+ * Description: this function prints input
+ * string characters with alphabeticals rotated
+ * by 13 letter
+ *
+ * Return: number of printed characters;
+ */
+int rot13(va_list s)
+{
+	int i;
+	char *str;
+
+	str = va_arg(s, char*);
+
+	for (i = 0; str[i] != '\0'; i++)
+	{
+		if (isalpha(str[i]))
+		{
+			if(tolower(str[i]) > 'm')
+				_putchar(str[i] - 13);
+			else
+				_putchar(str[i] + 13);
+		}
+		else
+			_putchar(str[i]);
+	}
+	return (i);
+}

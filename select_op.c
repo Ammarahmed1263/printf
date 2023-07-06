@@ -22,6 +22,7 @@ int (*chs_op(char s))(va_list v_arg)
 		{"u", print_u},
 		{"p", print_p},
 		{"r", print_r},
+		{"R", rot13},
 		{NULL, NULL}
 	};
 
