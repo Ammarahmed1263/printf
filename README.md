@@ -2,23 +2,23 @@
 # Printf project
 
 Hello, world!\
-Let's take a brief about this project at the beginning, In this project we have created a printf function which is similar but not identical to C language printf function as ours have some extra features but don't handle flags.
+💬 Let's take a brief about this project at the beginning, In this project we have created a printf function which is similar but not identical to C language printf function as ours have some extra features but don't handle flags.
 
 
 
 ## Most Important Concepts Used:
-### 1- Advanced Concepts
+### 🧠 Advanced Concepts
 - Variadic Function
 - Function Pointers
 - Dubugging with gdb
 - Typecasting and Typedef
 
-### 2- Basic Concepts
+### 😄 Basic Concepts
 - Pointers
 - Arrays and Strings
 - Struct
 - Functions
-## what can this function do??
+## what can this function do?🤔
 - Handle the %c conversion specifier
 
 - Handle the %s conversion specifier
@@ -42,7 +42,7 @@ Let's take a brief about this project at the beginning, In this project we have 
 - Code written in this repo fulfills betty-style and betty-doc constrains
 
 - If you are wondering "who implemented what" you can check commits history
-## Authors
+## 👩‍💻 Authors
 
 - [@Ammar Ahmed](https://www.github.com/Ammarahmed1263)
 - [@Mohanned Abdelazem](https://www.github.com/MohannedAbdelazem)
