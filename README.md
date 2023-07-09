@@ -47,8 +47,8 @@ Hello, world!\
 - [@Ammar Ahmed](https://www.github.com/Ammarahmed1263)
 - [@Mohanned Abdelazem](https://www.github.com/MohannedAbdelazem)
 ## 🔗 Contact Us:
-[![Ammar](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/ammar-ahmed-864136220)
+[![Linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=Ammar&logoColor=white)](https://www.linkedin.com/in/ammar-ahmed-864136220)
 
-[![Mohanned](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/mohanned-abdelazem-a1bb1b230)
+[![Linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=Mohanned&logoColor=white)](https://www.linkedin.com/in/mohanned-abdelazem-a1bb1b230)
 
 
