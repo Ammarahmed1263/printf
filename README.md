@@ -2,7 +2,7 @@
 # Printf project
 
 Hello, world!\
-Let's take a brief about this project at first, in this project we have created a printf function which is similar but not identical to C language printf function.
+Let's take a brief about this project at the beginning, In this project we have created a printf function which is similar but not identical to C language printf function as ours have some extra features but don't handle flags.
 
 
 
