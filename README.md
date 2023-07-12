@@ -10,7 +10,7 @@ Hello, world!\
 ### 🧠 Advanced Concepts
 - Variadic Function
 - Function Pointers
-- Dubugging with gdb
+- Debugging with gdb
 - Typecasting and Typedef
 
 ### 😄 Basic Concepts
